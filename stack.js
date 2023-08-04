@@ -21,11 +21,11 @@ class Stack {
   }
 
   peek() {
-    return this[`_${this._size -1}`];
+    return this[`_${this._size - 1}`];
   }
 
   pop() {
-    if(this.isEmpty){
+    if (this.isEmpty) {
       return;
     }
     const deleted = this[`_${this._size - 1}`];
@@ -34,10 +34,43 @@ class Stack {
     return deleted;
   }
 }
-const stack = new Stack(3, 2, 3, 4);
-console.log(stack);
-console.log(stack.peek());
-console.log(stack.pop());
-console.log(stack.push(20));
-console.log(stack);
-console.log(stack.push(20));
+
+
+
+const options= {
+  brackets : {
+  "(": ")",
+  "{": "}",
+  "[": "]",
+}
+}
+
+const string = "(2+2)*(3-4)";
+
+
+/**
+ *
+ * @param {string} str
+ * @param {object} options
+ * @param {object} options.brackets
+ * @returns {boolean}
+ */
+const checkSequence = (str, options) => {
+  let stack = new Stack(str.length);
+  for (const item of str) {
+    if (Object.keys(options.brackets).includes(item) ) {
+      stack.push(item);
+      continue;
+    }
+    
+    if (item === options.brackets[stack.peek()] ) {
+      stack.pop();
+    }
+    else if (Object.keys(options.brackets).includes(item) || Object.values(options.brackets).includes(item) ) {
+      return false;
+    }
+  }
+  return stack.isEmpty;
+};
+
+console.log(checkSequence(string, options));
