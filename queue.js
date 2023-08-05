@@ -37,14 +37,11 @@ const queue2 = new Queue(4, 5, 6, 2, 5, 8, 5, 8);
 
 const mergeQueue = (queue1, queue2) => {
   const queue3 = new Queue();
-  let index
-  while (queue1.size !== 0 || queue2.size !== 0) {
-    index++
-    if (queue1.size !== 0) {
+  while (queue1.size || queue2.size) {
+    if (queue1.size) {
       queue3.en(queue1.de());
     }
-    if (queue2.size !== 0) {
-      
+    if (queue2.size) {
       queue3.en(queue2.de());
     }
   }
