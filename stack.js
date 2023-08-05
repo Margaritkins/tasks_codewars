@@ -75,4 +75,4 @@ const checkSequence = (str, options) => {
   return stack.isEmpty;
 };
 
-console.log(checkSequence(string, options));
+// console.log(checkSequence(string, options));
