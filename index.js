@@ -30,3 +30,5 @@ class Worker {
 const worker1 = new Worker("Bruse", "Lee", 50, 20);
 // console.log(worker1);
 // console.log(worker1.getSalary(50, 20));
+
+

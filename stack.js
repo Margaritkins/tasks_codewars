@@ -26,7 +26,7 @@ class Stack {
 
   pop() {
     if (this.isEmpty) {
-      return;
+      return "underflow";
     }
     const deleted = this[`_${this._size - 1}`];
     delete this[`_${this._size - 1}`];
@@ -35,18 +35,16 @@ class Stack {
   }
 }
 
+const options = {
+  brackets: {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+    "<": ">",
+  },
+};
 
-
-const options= {
-  brackets : {
-  "(": ")",
-  "{": "}",
-  "[": "]",
-}
-}
-
-const string = "(2+2)*(3-4)";
-
+const string = "<(2+2)*(3-4)>";
 
 /**
  *
@@ -58,15 +56,19 @@ const string = "(2+2)*(3-4)";
 const checkSequence = (str, options) => {
   let stack = new Stack(str.length);
   for (const item of str) {
-    if (Object.keys(options.brackets).includes(item) ) {
+    if (Object.keys(options.brackets).includes(item)) {
       stack.push(item);
       continue;
     }
-    
-    if (item === options.brackets[stack.peek()] ) {
+    // if (stack.isEmpty) {
+    //   return false;
+    // }
+    if (item === options.brackets[stack.peek()]) {
       stack.pop();
-    }
-    else if (Object.keys(options.brackets).includes(item) || Object.values(options.brackets).includes(item) ) {
+    } else if (
+      Object.keys(options.brackets).includes(item) ||
+      Object.values(options.brackets).includes(item)
+    ) {
       return false;
     }
   }
