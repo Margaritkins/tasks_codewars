@@ -48,9 +48,9 @@ class Queue {
 }
 const queue1 = new Queue("asd", "true", "aaa", "ttt");
 
-console.log(queue1);
+// console.log(queue1);
 
-console.log(...queue1);
+// console.log(...queue1);
 
 // console.log(queue1);
 const queue2 = new Queue(4, 5, 6, 2, 5, 8, 5, 8);
