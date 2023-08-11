@@ -3,36 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="./dom.js"></script>
-    <script src="./queue.js"></script>
-    <script src="./stack.js"></script>
-    <script src="./index.js"></script>
-    <title>Document</title>
+    <title>DOM</title>
+    <link rel="stylesheet" href="./assetes/style/style.css" />
+    <script defer src="./assetes/js/sandbox.js"></script>
+    <!-- <script defer src="./assetes/js/Slider.js"></script> -->
+    <script defer src="./assetes/js/main.js"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li class="list-item">item 1</li>
-          <li class="list-item">item 2</li>
-          <li class="list-item">item 3</li>
-          <li class="list-item">item 4</li>
-          <li class="list-item">item 5</li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <article>
-        <h1>heading</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, nemo
-          minus vitae in placeat illo veritatis sed aperiam nihil dolore magni
-          quas quam labore! Dolore corporis tempora, delectus provident
-          repudiandae doloremque mollitia ducimus sed impedit, obcaecati
-          deleniti soluta iste assumenda aut eligendi libero quasi, autem beatae
-          eos. Corporis, inventore repudiandae.
-        </p>
-      </article>
-    </main>
+    <section>
+      <h2>flex-direction</h2>
+      <div class="btn-container">
+        <button data-flex-direction="row">row (рядок)</button>
+        <button data-flex-direction="row-reverse">row-reverse</button>
+        <button data-flex-direction="column">column</button>
+        <button data-flex-direction="column-reverse">column-reverse</button>
+      </div>
+      <div class="flex-parent1">
+      <div class="flex-parent">
+        <div class="flex-child">1</div>
+        <div class="flex-child">2</div>
+        <div class="flex-child">3</div>
+        <div class="flex-child">4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="slider-container">
+      <button>prev</button>
+      <button>next</button>
+      <div class="slide">
+        <img src="" alt="img" />
+      </div>
+    </section> -->
   </body>
 </html>
